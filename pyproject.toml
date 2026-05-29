@@ -5,4 +5,16 @@ description = "AGI-adjacent system that designs and builds multi-agent architect
 readme = "README.md"
 requires-python = ">=3.12.13"
 authors = [{ name = "Vedantsinh Mahida" }]
-dependencies = []
+dependencies = [
+    "black>=26.5.1", # format generated code
+    "groq>=0.37.1",
+    "langchain>=1.3.2",
+    "langchain-core>=1.4.0",
+    "langchain-groq>=1.1.2",
+    "langgraph>=1.2.2",
+    "networkx>=3.6.1", # agent graph topology analysis
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.2",
+    "rich>=15.0.0",
+    "typer>=0.26.3",
+]
