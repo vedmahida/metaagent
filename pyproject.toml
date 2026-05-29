@@ -1,0 +1,8 @@
+[project]
+name = "metaagent"
+version = "0.1.0"
+description = "AGI-adjacent system that designs and builds multi-agent architectures from plain English"
+readme = "README.md"
+requires-python = ">=3.12.13"
+authors = [{ name = "Vedantsinh Mahida" }]
+dependencies = []
