@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.scripts]
-ma = "ma.cli.main:app"
+metaagent = "ma.cli.main:app"
 
 [tool.hatch.build.targets.wheel]
 packages = ["ma"]
