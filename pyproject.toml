@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "metaagent"
 version = "0.1.0"
@@ -18,3 +22,9 @@ dependencies = [
     "rich>=15.0.0",
     "typer>=0.26.3",
 ]
+
+[project.scripts]
+ma = "ma.cli.main:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ma"]
