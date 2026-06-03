@@ -1,0 +1,7 @@
+Monitor our top 5 competitor pricing pages every 6 hours.
+When any price changes by more than 5%, immediately send a Slack alert
+with the old price, new price, and percentage change.
+Every Monday morning, send a weekly summary email with a full pricing 
+comparison table across all competitors.
+Also maintain a SQLite database of all historical pricing snapshots
+so we can query price trends over time.

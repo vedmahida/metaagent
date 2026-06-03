@@ -1,0 +1,8 @@
+Automatically triage incoming customer support tickets from our Zendesk queue.
+Classify each ticket by urgency (P1/P2/P3), category (billing/technical/general),
+and estimated resolution time.
+P1 tickets should immediately page the on-call engineer via PagerDuty.
+P2 tickets should be assigned to the right team queue automatically.
+P3 tickets should get an auto-response with relevant FAQ links based on the ticket content.
+Log all triage decisions with confidence scores to a PostgreSQL database
+for weekly quality review.
