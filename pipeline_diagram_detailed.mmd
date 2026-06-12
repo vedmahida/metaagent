@@ -1,0 +1,55 @@
+flowchart TD
+    %% Start
+    Start([Start]) --> JobDesc[Job Description]
+
+    %% Architect stage
+    JobDesc --> Architect[Architect]
+    Architect -->|Architecture JSON| ArchOut[SystemArchitecture]
+
+    %% Critic stage with possible loop
+    ArchOut --> Critic[Critic]
+    Critic -->|Score ≥ 0.75| Approved{Approved}
+    Critic -->|Score < 0.75| Revise{Needs Revision}
+    Revise --> ArchitectRev[Architect Revision]
+    ArchitectRev --> Critic
+
+    %% Synthesizer stage
+    Approved --> Synthesizer[Synthesizer]
+    Synthesizer -->|Python code| Code[Generated Code]
+    Synthesizer -->|README.md| Readme[Generated README]
+
+    %% Validator stage (auto‑fix loop)
+    Code --> Validator[Validator]
+    Validator -->|Pass| Validated[Validated Code]
+    Validator -->|Issues found & auto‑fix| Fixed[Auto‑fixed Code]
+    Fixed --> Validator
+
+    %% Writer / Output stage
+    Validated --> Writer[Writer]
+    Writer --> End([End])
+
+    %% Legend node
+    Legend[/"Legend: Start → Job Description → Architect → Critic (loop) → Synthesizer → Validator (auto‑fix) → Writer → End"/]
+
+    %% Styling
+    style Start fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style End fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style Critic fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Architect fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style Synthesizer fill:#e0f7fa,stroke:#0097a7,stroke-width:2px
+    style Validator fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style Writer fill:#f9fbe7,stroke:#827717,stroke-width:2px
+    style Legend fill:#fafafa,stroke:#ccc,stroke-width:1px
+
+    %% Subgraph
+    subgraph Architecture_Details [Architecture Details]
+        direction LR
+        ArchOut --> Agents[Agents list]
+        ArchOut --> Tools[Tools list]
+        ArchOut --> Handoffs[Handoff graph]
+    end
+
+    %% Connections
+    Agents --> Synthesizer
+    Tools --> Synthesizer
+    Handoffs --> Synthesizer

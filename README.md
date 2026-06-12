@@ -11,7 +11,7 @@
 
 MetaAgent bridges the gap between high-level human ideas and complex multi-agent architectures. By feeding it a plain English job description, MetaAgent utilizes an internal **Architect-Critic-Synthesizer** loop to spin up enterprise-grade, deterministic, and fully documented LangGraph code in seconds.
 
----
+---****
 
 ## ✨ Core Features
 
@@ -25,6 +25,8 @@ MetaAgent bridges the gap between high-level human ideas and complex multi-agent
 ---
 
 ## 📸 System Visualizations
+
+<img src="/assets/pipeline-arch.png" width="80%" height="80%">
 
 ### 1. Architectural Topology Design
 When initialized with a natural language specification, MetaAgent immediately constructs a comprehensive multi-agent hierarchical tree. This explicitly maps out operational tools, structural handoff paths, and edge-case failure boundaries for every agent.
